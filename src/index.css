@@ -1,0 +1,123 @@
+/* ==========================================================================
+   ESWAMCU - design tokens + base styles.
+   Colours are taken straight from the ESWAMCU logo:
+     green  (the "COOP" badge)   indigo (the wordmark + lower swirl)
+     amber  (the upper swirl)
+   ========================================================================== */
+
+:root {
+  /* Brand */
+  --green: #1fa24f;
+  --green-btn: #17853f; /* darker green so white text passes contrast */
+  --green-deep: #0f6a31;
+  --green-soft: #e8f6ee;
+
+  --indigo: #2f3a8f;
+  --indigo-deep: #1d2670;
+  --indigo-ink: #111743;
+  --indigo-soft: #eceefa;
+
+  --amber: #f3b04a;
+  --amber-deep: #9a6200; /* amber used as TEXT on light backgrounds */
+  --amber-soft: #fff3dc;
+
+  /* Neutrals */
+  --ink: #1a2145;
+  --muted: #566080;
+  --line: #e3e6f2;
+  --paper: #f8f8f3;
+  --white: #ffffff;
+  --danger: #b3261e;
+
+  /* Shape + depth */
+  --radius: 18px;
+  --radius-sm: 10px;
+  --shadow-sm: 0 2px 10px rgba(29, 38, 112, 0.06);
+  --shadow-md: 0 14px 40px rgba(29, 38, 112, 0.12);
+  --shadow-lg: 0 24px 60px rgba(17, 23, 67, 0.22);
+
+  /* Type */
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--indigo-deep);
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--indigo);
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--indigo-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
