@@ -1,9 +1,4 @@
-"""
-ESWAMCU website - PRODUCTION settings (same VPS as the CBC site).
 
-Domain: eswacu.169-58-244-210.sslip.io
-"""
-import os
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -13,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ------------------------------------------------------------------
 SECRET_KEY = "!lyd0L9P8Yk6vjHIzSPP^lEihUMjhCklkRMlP6K9Gt8nqN_GXLqO^Va8ONqm"
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "eswacu.169-58-244-210.sslip.io"]
 
