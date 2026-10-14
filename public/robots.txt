@@ -22,4 +22,4 @@ User-agent: Google-Extended
 Allow: /
 Disallow: /admin
 
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://eswacu.169-58-244-210.sslip.io/sitemap.xml

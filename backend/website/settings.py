@@ -1,11 +1,7 @@
 """
-ESWAMCU website - LOCAL DEVELOPMENT settings.
+ESWAMCU website - PRODUCTION settings (same VPS as the CBC site).
 
-Everything here is meant for running on your own computer
-(http://localhost:8000 for the API, http://localhost:3000 for the site).
-Nothing is configured for deployment yet - when you deploy, move the secret
-key into an environment variable, set DEBUG = False, switch to PostgreSQL
-and add the real domain to ALLOWED_HOSTS / CORS_ALLOWED_ORIGINS.
+Domain: eswacu.169-58-244-210.sslip.io
 """
 import os
 from pathlib import Path
@@ -13,11 +9,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ------------------------------------------------------------------
-# SECURITY (local only)
+# SECURITY
 # ------------------------------------------------------------------
-SECRET_KEY = "local-dev-only-secret-key-do-not-use-in-production"
-DEBUG = True
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+SECRET_KEY = "!lyd0L9P8Yk6vjHIzSPP^lEihUMjhCklkRMlP6K9Gt8nqN_GXLqO^Va8ONqm"
+
+DEBUG = False
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "eswacu.169-58-244-210.sslip.io"]
+
+CSRF_TRUSTED_ORIGINS = ["https://eswacu.169-58-244-210.sslip.io"]
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -66,7 +66,8 @@ TEMPLATES = [
 WSGI_APPLICATION = "website.wsgi.application"
 
 # ------------------------------------------------------------------
-# DATABASE - a single local SQLite file (db.sqlite3). No server needed.
+# DATABASE - SQLite for now (single file, db.sqlite3). No server needed.
+# Switch to PostgreSQL later when the site outgrows it.
 # ------------------------------------------------------------------
 DATABASES = {
     "default": {
@@ -116,7 +117,11 @@ REST_FRAMEWORK = {
     ],
 }
 
-CORS_ALLOWED_ORIGINS = ["http://localhost:3000", "http://127.0.0.1:3000"]
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "https://eswacu.169-58-244-210.sslip.io",
+]
 
 ADMIN_SITE_HEADER = "ESWAMCU Admin"
 ADMIN_SITE_TITLE = "ESWAMCU Admin Portal"

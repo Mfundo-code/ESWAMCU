@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+
+# AI crawlers are welcome to read the public site
+User-agent: GPTBot
+Allow: /
+Disallow: /admin
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /admin
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+
+Sitemap: https://eswacu.169-58-244-210.sslip.io/sitemap.xml

@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Local development: the Django API runs on port 8000.
-const API_BASE_URL = "http://localhost:8000/api";
+// Production: the Django API is served on the same domain under /api.
+const API_BASE_URL = "https://eswacu.169-58-244-210.sslip.io/api";
 
 const api = axios.create({ baseURL: API_BASE_URL });
 
